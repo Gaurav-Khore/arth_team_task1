@@ -54,15 +54,15 @@ while wl:
 			os.system("tput setaf 7")
 			lch = int(input("Enter Your Choice:-"))
 			if lch == 1:
-				os.system("python3 /root/task/dockerrun.py")
+				os.system("python3 /root/task/lvm.py")
 				break
 			elif lch == 2:
 				dip = input("Enter ip of remote system:")
 				os.system("ssh-keygen -t rsa -b 2048")
 				os.system("ssh-copy-id root@{0}".format(dip))
 				os.system("ssh root@{0} mkdir /lvm_con".format(dip))
-				os.system("scp dockerrun.py root@{0}:/lvm_con".format(dip))
-				os.system("ssh root@{0} python3 /lvm_con/dockerrun.py".format(dip))
+				os.system("scp lvm.py root@{0}:/lvm_con".format(dip))
+				os.system("ssh root@{0} python3 /lvm_con/lvm.py".format(dip))
 				break		
 			elif lch == 3:
 				print("Thanks for using the tool")
@@ -73,7 +73,7 @@ while wl:
 	elif ch == 7:
 		
 		
-		os.system("python3 /root/task/menu.py")
+		os.system("python3 /root/task/aws.py")
 	elif ch == 8:
 		print("Thanks for using the tool")
 		exit() 
